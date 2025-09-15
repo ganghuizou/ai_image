@@ -1,14 +1,19 @@
 {
-
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python",
+            "config": {
+                "includeFiles": [
+                    "nanobanana_app/**"
+                ]
+            }
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
             "dest": "app.py"
         }
-    ],
-    "functions": {
-        "app.py": {
-            "includeFiles": "nanobanana_app/**"
-        }
-    }
+    ]
 }
