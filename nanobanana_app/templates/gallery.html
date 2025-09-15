@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}我的画廊 - NanoBanana AI Painter{% endblock %}
+
+{% block content %}
+    <h1>我的画廊</h1>
+    <div class="gallery-grid">
+        {% for image in images %}
+            <div class="gallery-item">
+                <img src="{{ image.image_url }}" alt="{{ image.prompt }}">
+                <p>{{ image.prompt }}</p>
+            </div>
+        {% else %}
+            <p>您还没有生成任何图片。</p>
+        {% endfor %}
+    </div>
+{% endblock %}
